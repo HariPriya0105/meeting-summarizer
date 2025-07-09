@@ -5,10 +5,10 @@ bp=Blueprint('routes', __name__)
 
 @bp.route("/transcribe",methods=["POST"])
 def transcribe():
-    file = request.flies["file"]
+    file = request.files["file"]
     transcript=transcribe_audio(file)
     return jsonify({"transcript": transcript})
 
 @bp.route("/", methods=["GET"])
 def home():
-    return "✅ Flask backend is running!"
+    return "Flask backend is running!"
